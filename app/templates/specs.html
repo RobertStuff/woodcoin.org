@@ -1,0 +1,56 @@
+{% extends "_base.html" %}
+{% block content %}
+   
+   <div id="forest" class="fst"><div style="height: 45px;"></div>
+    <h1 class="fsth">Stuff That Makes Us Cooler</h1>
+    <h2 class="fsth"><a href="{{ url_for('main.faq') }}">FAQ</a> &#8486; <a href="{{ url_for('main.specs') }}"><em>Specifications</em></a> &#8486; <a href="{{ url_for('main.woodcoin') }}">Whitepaper</a> &#8486; <a href="http://logaddress.org/index.html">Paper Notes</a></h2>
+    <h2>Technical Details</h2>
+    <p>Woodcoin is a public cryptocurrency like <a href="http://en.bitcoin.it" target="_blank">Bitcoin</a>.  There are three major changes, with design considerations listed here:</p>
+<ol class="spec" style="list-style-type: decimal;"><li> Proof of Work algorithm:  Double Skein<br/><br/>
+<span class="capspec">This is the first consensus network built solely with the <a href="https://en.wikipedia.org/wiki/Skein_%28hash_function%29" target="_blank">skein hash function</a>.  Read more about Skein <a href="http://www.skein-hash.info/about" target="_blank">here</a>.  We hope to encourage further use and testing of the Skein family with this coin.</span></li>
+
+<li>Elliptic Curve for Digital Signatures: X9_62_prime256v1.<br/><br/>
+<span class="capspec">To sign transactions and create public and private addresses we use the elliptic curve digital signature algorithm ECDSA just like bitcoin.  However we use a different curve as a basis to do so.  This curve is perhaps the most used in the financial industry.  Some people think it is better.  We like to encourage cryptographic diversity.</span></li>
+
+<li>Logarithmic Coin Release<br/><br/>
+Woodcoin is the first coin to use a logarithmic coin release. The woodcutting reward is continually adjusted according to the harmonic series. From /src/main.cpp:</li>
+<blockquote>
+int64 static GetBlockValue(int nHeight, int64 nFees) {<br/>
+int64 nSubsidy = 1000000 * COIN;<br/>
+if (nHeight<100) return 1*COIN;<br/>
+else return nSubsidy/nHeight + nFees;<br/>
+}<br/></blockquote>
+
+<p>This leads to a total money supply <span class="capspec">S</span> which increases logarithmically in block height <span class="capspec">n</span>:</p>
+<blockquote>
+S = 1000000* ( log n + gamma )   –  forest<br/>
+log = natural logarithm<br/>
+gamma = euler-mascheroni constant<br/>
+forest  =  5187377.51763962 </blockquote>
+
+<p>Unlike Bitcoin and most other cryptocurrencies, the reward will never drop to zero and will smoothly decrease.  (Techinically it is scheduled to reach zero when the reward drops to under 1 satoshi but that isn’t for about 350 million years)  Here is a plot of the woodcutting reward per day, compared to bitcoin, for the next 50 years or so:</p>
+
+<div align="center"><img src="{{ url_for('static', filename='img/etc/woodcoin-v-bitcoin-distribution.png') }}" height="270" width="450" alt="Here is a plot of the Daily rewards comparing BTC released per day to LOG released per day for the next  45 years.  For more on the economics of a logarithmically increasing money supply read the whitepaper."><br/></div>
+
+<h3>Other technical details of Woodcoin:</h3>
+
+<ul><li>Port: 8338</li>
+<li>Testnet: 18338</li>
+<li>RPC: 9338</li>
+<li>RPC Testnet: 19338</li>
+<li>Speed: 2 min. blocks</li>
+<li>Difficulty: 1 hr. adjust</li></ul>
+
+<h3>Heritage:</h3>
+
+<p>Notable continued coin heritage: <a href="http://en.bitcoin.it" target="_blank">Bitcoin</a>, <a href="https://github.com/litecoin-project/litecoin" target="_blank">Litecoin</a>, <a href="http://www.quarkcoins.com/" target="_blank">Quarkcoin</a>.</p>
+
+<p>Depricated heritage (release version): <a href="http://www.cthulhu.tk/" target="_blank">Cthulu&rsquo;s Offerings</a>, Foocoin/SmallChange.</p>
+   
+    <footer>
+  Many icons designed by <a href="http://freepik.com" target="_blank">Freepik</a>. 
+ </footer> 
+   
+   </div>
+{% endblock %}
+ 

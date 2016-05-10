@@ -1,0 +1,28 @@
+{% extends "_base.html" %}
+{% block content %}
+   
+   <div id="forest" class="fst"><div style="height: 45px;"></div>
+        <h1 class="fsth">Sustainability is the Watch Word</h1>
+        <h2 class="fsth"><a href="{{ url_for('main.faq') }}"><em>FAQ</em></a> &#8486; <a href="{{ url_for('main.specs') }}">Specifications</a> &#8486; <a href="{{ url_for('main.woodcoin') }}">Whitepaper</a> &#8486; <a href="http://logaddress.org/index.html">Paper Notes</a></h2>
+        <h3 class="faq">How do I start chopping?</h3>
+        <p>If you are using <span class="capfaq">woodcoind</span> you need to issue the command <span class="captfaq">woodcoind setgenerate true</span>. If you are using <span class="capfaq">woodcoin-qt</span>, you need to navigate as follows:<br/>
+        <ul style="width: 425px; color: #728188; font-family: serif;">
+          <li style="list-style-type: circle;"><span class="captfaq">Help ==>  Debug Window ==> Console Tab.</span></li>
+          <li style="list-style-type: circle;">Then in the console type the command <span class="captfaq">setgenerate true</span> and press <span class="captfaq">Enter</span>.</li>
+          <li style="list-style-type: circle;">To check your woodcutting progress, go to the same console and type <span class="captfaq">getmininginfo.</span></li>
+        </ul>
+        
+        <h3 class="faq">I'm behind a checkpoint and alerts aren't working. What&rsquo;s up?</h3>
+        <p>The philosophy of woodcoin is complete decentralization.  Checkpoints and alerts are not used.</p>
+        
+        <h3 class="faq">How can I contribute?</h3>
+        <p>Start chopping wood!  By chopping wood and collecting LOGs, you are helping secure the Woodcoin network. By using LOGs as tokens of exchange, you are helping to spread the word about woodcoin.</p>
+
+    <p>The code which runs woodcoin will always be open source.   Take a look and submit your changes on github.  There are many other tools still missing from the woodcutting arsenal and new ideas of all sorts are appreciated.  If you can&rsquo;t code it up yourself, tell us about it on one of the forums and maybe we can do it for you.</p>
+        
+        <footer>
+      Many icons designed by <a href="http://freepik.com" target="_blank">Freepik</a>. 
+     </footer> 
+   </div>
+  {% endblock %}
+ 

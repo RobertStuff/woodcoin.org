@@ -1,0 +1,24 @@
+<!-- Except where illegal, all website code is original (c) 2015 www.phm.link and
+licensed under Mozilla Public License 2.0. Certain parts and files are not original nor sublicensed here.
+They are noted as such. More on the license http://mozilla.org/MPL - LICENSE DOES NOT APPLY WHERE IT CONFLICTS. -->
+
+<!DOCTYPE html>
+  
+<html lang="en">
+
+<head>
+  <title>Woodcoin: Sustainable. Digital. Cash. </title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="woodcoin, cryptocurrency, bitcoin, funkenstein, moonpunter" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <link href="{{url_for('static', filename='css/main.css')}}" rel="stylesheet" media="screen" />
+  {% block css %}{% endblock %}
+</head>
+<body>
+	<!-- child template -->
+    {% block content %}{% endblock %}
+
+    {% include "side.html" %}
+</body>
+
+</html>

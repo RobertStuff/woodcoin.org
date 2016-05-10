@@ -1,0 +1,25 @@
+{% extends "_base.html" %}
+{% block content %}
+  
+   
+   <div id="forest" class="fst"><div style="height: 45px;"></div>
+      <h1 class="fsth">&amp; Wood Enough For All</h1>
+      <h2 class="fsth"><a href="{{ url_for('main.faq') }}">FAQ</a> &#8486; <a href="{{ url_for('main.specs') }}">Specifications</a> &#8486; <a href="{{ url_for('main.woodcoin') }}">Whitepaper</a> &#8486; <a href="http://logaddress.org/index.html">Paper Notes</a></h2>
+      <p>Woodcoin is a public digital currency which uses Pure Skein. Its unit of exchange is LOG. It is similar to other cryptocurrencies, but has key differences. Woodcoin was invented by Funkenstein the Dwarf in October 2014. Old site <a href="http://archive.woodcoin.org">here</a>.  <a href="http://archive.woodcoin.org/index.php/category/chinese/">中文</a></p>
+      <br/>
+      <ul>
+      <li>Woodcoin&rsquo;s harmonic distribution is designed to more closely model renewable resources than nonrenewable ones. This means that while it is always better to chop LOGs today, there will still be incentive to chop tomorrow.</li>
+      <li>The logarithmic money supply curve is designed for stability and longevity,  with the longest reward schedule of any other cryptocurrency.</li>
+      <li>It also features novel coin design in proof of work function (Pure Skein) and in digital signature keypairs (X9_62_prime256v1).</li>
+      </ul>
+      <br/>
+      <div align="center"><img src="{{ url_for('static', filename='img/etc/woodcoin-v-bitcoin-distribution.png') }}" height="270" width="450" alt="Here is a plot of the Daily rewards comparing BTC released per day to LOG released per day for the next  45 years.  For more on the economics of a logarithmically increasing money supply read the whitepaper."><br/></div><span class="caption">Here is a plot of the Daily rewards comparing BTC released per day to LOG released per day for the next  45 years.  For more on the economics of a logarithmically increasing money supply, read the <a href="woodcoin.pdf">whitepaper</a>.</span>
+     
+      <footer>
+        Many icons designed by <a href="http://freepik.com" target="_blank">Freepik</a>. 
+     </footer> 
+     
+   </div>
+  
+{% endblock %}
+ 
